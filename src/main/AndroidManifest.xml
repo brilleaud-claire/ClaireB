@@ -13,6 +13,11 @@
         android:theme="@style/Theme.ClaireB"
         tools:targetApi="31">
         <activity
+            android:name=".BengaluruActivity"
+            android:exported="false"
+            android:label="@string/title_activity_bengaluru"
+            android:theme="@style/Theme.ClaireB" />
+        <activity
             android:name=".MainActivity"
             android:exported="true"
             android:label="@string/app_name"
