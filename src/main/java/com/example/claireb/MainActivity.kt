@@ -14,8 +14,6 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.foundation.rememberScrollState
-import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
@@ -62,18 +60,22 @@ fun Components2(modifier : Modifier=Modifier){
     LazyColumn(horizontalAlignment = Alignment.CenterHorizontally,
         modifier = Modifier
             .fillMaxWidth()
-            .verticalScroll(
-                rememberScrollState()
-            )
+            //.verticalScroll(
+             //   rememberScrollState()
+            //)
     ) {
         item{
-            Column (modifier = Modifier
-                .fillMaxWidth()
-                .padding(25.dp)){
-                Row(modifier = Modifier
-                    .fillMaxWidth(),
+            Column(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(25.dp)
+            ) {
+                Row(
+                    modifier = Modifier
+                        .fillMaxWidth(),
                     verticalAlignment = Alignment.Top,
-                    horizontalArrangement  =  Arrangement.Absolute.SpaceBetween){
+                    horizontalArrangement = Arrangement.Absolute.SpaceBetween
+                ) {
                     Text(
                         text = "Weather",
                         color = Color.White,
@@ -82,22 +84,25 @@ fun Components2(modifier : Modifier=Modifier){
                         //fontWeight = FontWeight.Normal,
                         fontSize = 28.sp,
                         lineHeight = 34.sp,
-                        letterSpacing = 0.36.sp)
+                        letterSpacing = 0.36.sp
+                    )
                     Spacer(modifier = Modifier.height(50.dp))
                     Image(
                         painter = painterResource(R.drawable.right_title),
                         contentDescription = null,
-                        modifier= Modifier
+                        modifier = Modifier
                             .width(33.dp)
-                            .height(34.dp))
+                            .height(34.dp)
+                    )
 
                 }
                 Image(
                     painter = painterResource(R.drawable.search_field),
                     contentDescription = null,
-                    modifier= Modifier
+                    modifier = Modifier
                         .width(358.dp)
-                        .height(36.dp))
+                        .height(36.dp)
+                )
             }
         }
         item {
@@ -107,16 +112,26 @@ fun Components2(modifier : Modifier=Modifier){
             )
             Spacer(modifier = Modifier.height(30.dp))
         }
-        item{
-            Components(name = Weather("22°","Chennai,India","Fast Wind","H:26° L:18"), image = "moon_fast_wind")
+        item {
+            Components(
+                name = Weather("22°", "Chennai,India", "Fast Wind", "H:26° L:18"),
+                image = "moon_fast_wind"
+            )
+            Spacer(modifier = Modifier.height(30.dp))
+
+        }
+        item {
+            Components(
+                name = Weather("29°", "Delhi,India", "Cloudy", "H:32° L:27"),
+                image = "sun_cloud_angled_rain"
+            )
             Spacer(modifier = Modifier.height(30.dp))
         }
         item{
-            Components(name = Weather("29°","Delhi,India","Cloudy","H:32° L:27"), image = "sun_cloud_angled_rain")
-            Spacer(modifier = Modifier.height(30.dp))
-        }
-        item{
-            Components(name = Weather("25°","Mumbai,India","Stormy","H:32° L:20"), image = "cloud_zap")
+             Components(
+                 name = Weather("25°", "Mumbai,India", "Stormy", "H:32° L:20"),
+                 image = "cloud_zap"
+             )
         }
     }
 }

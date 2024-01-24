@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">ClaireB</string>
     <string name="title_activity_bengaluru">BengaluruActivity</string>
+    <string name="title_activity_second_page">SecondPageActivity</string>
 </resources>

@@ -13,6 +13,11 @@
         android:theme="@style/Theme.ClaireB"
         tools:targetApi="31">
         <activity
+            android:name=".SecondPageActivity"
+            android:exported="false"
+            android:label="@string/title_activity_second_page"
+            android:theme="@style/Theme.ClaireB" />
+        <activity
             android:name=".BengaluruActivity"
             android:exported="false"
             android:label="@string/title_activity_bengaluru"

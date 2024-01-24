@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -128,7 +129,8 @@ fun GreetingText(name: Weather, modifier: Modifier = Modifier) {
                 lineHeight = 18.sp,
                 letterSpacing = -0.08.sp
             )
-            Row{
+            Row(modifier=Modifier.width(298.dp),
+                horizontalArrangement = Arrangement.Absolute.SpaceBetween){
                 Text(
                     text = name.localisation,
                     //color = MaterialTheme.colorScheme.primary,
@@ -150,7 +152,7 @@ fun GreetingText(name: Weather, modifier: Modifier = Modifier) {
                     fontSize = 13.sp,
                     lineHeight = 18.sp,
                     letterSpacing = -0.08.sp,
-                    modifier = Modifier.offset(x=151.dp,y=5.dp)
+                    modifier = Modifier.offset(y=5.dp)
                 )
             }
         }
