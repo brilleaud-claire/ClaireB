@@ -52,6 +52,7 @@ class BengaluruActivity : ComponentActivity() {
 val sfProDisplayFamily = FontFamily(
     Font(R.font.sf_pro_display_regular, FontWeight.Normal),
     Font(R.font.sf_pro_display_bold, FontWeight.Bold),
+    Font(R.font.sf_pro_display_light, FontWeight.Light)
 )
 
 data class Weather(val temperature: String, val localisation: String, val type: String, val range: String)
