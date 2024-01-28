@@ -50,84 +50,91 @@ class SecondPageActivity : ComponentActivity() {
 
 @Composable
 fun Display(modifier: Modifier = Modifier){
-    Box(modifier=Modifier.fillMaxWidth()){
-        Image(
-            painter = painterResource(R.drawable.starry_mountain),
-            contentDescription = null,
-            modifier = Modifier
-                .width(430.dp)
-                .height(924.dp)
+    Surface(
+        modifier = Modifier.fillMaxSize(),
+        color = MaterialTheme.colorScheme.background
+
+    ){
+        Box(modifier=Modifier.fillMaxWidth()){
+            Image(
+                painter = painterResource(R.drawable.starry_mountain),
+                contentDescription = null,
+                modifier = Modifier
+                    .width(430.dp)
+                    .height(954.dp)
                 //.fillMaxWidth()
                 //.fillMaxHeight()
-        )
-        Image(
-            painter = painterResource(R.drawable.house),
-            contentDescription = null,
-            modifier = Modifier
-                .width(390.dp)
-                .height(390.dp)
-                .offset(x=20.dp,y = 304.dp)
-
-        )
-        Column(horizontalAlignment = Alignment.CenterHorizontally,
-            modifier = Modifier
-                .fillMaxWidth()
-                .offset(y = 71.dp)
-        ){
-            Text(
-                text = "Bengaluru",
-                //color = MaterialTheme.colorScheme.primary,
-                color = Color.White,
-                //style = MaterialTheme.typography.labelSmall
-                fontFamily = sfProDisplayFamily,
-                //fontWeight = FontWeight.Bold,
-
-                fontSize = 34.sp,
-                lineHeight = 41.sp,
-                letterSpacing = 0.37.sp
             )
+            Image(
+                painter = painterResource(R.drawable.house),
+                contentDescription = null,
+                modifier = Modifier
+                    .width(390.dp)
+                    .height(390.dp)
+                    .offset(x=20.dp,y = 304.dp)
 
-            Text(
-                text = "19°",
-                //color = MaterialTheme.colorScheme.primary,
-                color = Color.White,
-                //style = MaterialTheme.typography.labelSmall
-                fontFamily = sfProDisplayFamily,
-                fontWeight = FontWeight.Light,
-
-                fontSize = 96.sp,
-                lineHeight = 40.sp,
-                letterSpacing = 0.37.sp
             )
-            Text(
-                text = "Mostly Clear",
-                //color = MaterialTheme.colorScheme.primary,
-                color = Color.White.copy(alpha = 0.6f),
-                //style = MaterialTheme.typography.labelSmall
-                fontFamily = sfProDisplayFamily,
-                fontWeight = FontWeight.SemiBold,
+            Column(horizontalAlignment = Alignment.CenterHorizontally,
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .offset(y = 71.dp)
+            ){
+                Text(
+                    text = "Bengaluru",
+                    //color = MaterialTheme.colorScheme.primary,
+                    color = Color.White,
+                    //style = MaterialTheme.typography.labelSmall
+                    fontFamily = sfProDisplayFamily,
+                    //fontWeight = FontWeight.Bold,
 
-                fontSize = 20.sp,
-                lineHeight = 24.sp,
-                letterSpacing = 0.38.sp
-            )
-            Text(
-                text = "H:24°  L:18°",
-                //color = MaterialTheme.colorScheme.primary,
-                color = Color.White,
-                //style = MaterialTheme.typography.labelSmall
-                fontFamily = sfProDisplayFamily,
-                fontWeight = FontWeight.Normal,
+                    fontSize = 34.sp,
+                    lineHeight = 41.sp,
+                    letterSpacing = 0.37.sp
+                )
 
-                fontSize = 20.sp,
-                lineHeight = 24.sp,
-                letterSpacing = 0.38.sp
-            )
+                Text(
+                    text = "19°",
+                    //color = MaterialTheme.colorScheme.primary,
+                    color = Color.White,
+                    //style = MaterialTheme.typography.labelSmall
+                    fontFamily = sfProDisplayFamily,
+                    fontWeight = FontWeight.Light,
 
+                    fontSize = 96.sp,
+                    lineHeight = 40.sp,
+                    letterSpacing = 0.37.sp
+                )
+                Text(
+                    text = "Mostly Clear",
+                    //color = MaterialTheme.colorScheme.primary,
+                    color = Color.White.copy(alpha = 0.6f),
+                    //style = MaterialTheme.typography.labelSmall
+                    fontFamily = sfProDisplayFamily,
+                    fontWeight = FontWeight.SemiBold,
+
+                    fontSize = 20.sp,
+                    lineHeight = 24.sp,
+                    letterSpacing = 0.38.sp
+                )
+                Text(
+                    text = "H:24°  L:18°",
+                    //color = MaterialTheme.colorScheme.primary,
+                    color = Color.White,
+                    //style = MaterialTheme.typography.labelSmall
+                    fontFamily = sfProDisplayFamily,
+                    fontWeight = FontWeight.Normal,
+
+                    fontSize = 20.sp,
+                    lineHeight = 24.sp,
+                    letterSpacing = 0.38.sp
+                )
+
+            }
+            Spacer(modifier = Modifier.height(519.dp))
+            DayWeather()
         }
-        Spacer(modifier = Modifier.height(519.dp))
-        DayWeather()
     }
+
 }
 
 @Composable

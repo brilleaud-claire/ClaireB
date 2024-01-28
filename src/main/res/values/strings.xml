@@ -2,4 +2,6 @@
     <string name="app_name">ClaireB</string>
     <string name="title_activity_bengaluru">BengaluruActivity</string>
     <string name="title_activity_second_page">SecondPageActivity</string>
+    <string name="title_activity_home_page">HomePageActivity</string>
+    <string name="title_activity_nav_graph">NavGraph</string>
 </resources>

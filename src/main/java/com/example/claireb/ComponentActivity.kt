@@ -4,19 +4,18 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -28,6 +27,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
 import com.example.claireb.ui.theme.ClaireBTheme
 
 
@@ -36,14 +36,7 @@ class BengaluruActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             ClaireBTheme {
-                // A surface container using the 'background' color from the theme
-                Surface(
-                    modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colorScheme.background
-                ) {
-                    GreetingText(Weather("19°","Bengaluru,India","Mid Rain","H:24° L:18"))
-                    ImageComponent("moon_cloud_mid_rain")
-                }
+
             }
         }
     }
@@ -90,21 +83,23 @@ fun ImageComponent(image: String, modifier: Modifier = Modifier){
     }
 }
 @Composable
-fun GreetingText(name: Weather, modifier: Modifier = Modifier) {
-    //Spacer(modifier = Modifier.height(30.dp))
+fun GreetingText(name: Weather, navController : NavController, modifier: Modifier = Modifier) {
+
     Box{
         Image(
             painter = painterResource(R.drawable.rectangle),
             contentDescription = null,
-            //modifier = Modifier.size(333.dp)
+
             modifier = Modifier
                 .width(338.dp)
                 .height(185.dp)
+                .clickable{
+                navController.navigate(route=Screen.Bonus.route)
+            }
 
         )
         Column (modifier = Modifier.padding(20.dp)){
-            //Spacer(modifier = Modifier.height(8.dp))
-            //Spacer(modifier = Modifier.width(20.dp))
+
 
             Text(
                 text = name.temperature,
@@ -162,9 +157,9 @@ fun GreetingText(name: Weather, modifier: Modifier = Modifier) {
 }
 
 @Composable
-fun Components(name:Weather, image:String, modifier : Modifier=Modifier){
+fun Components(name:Weather, image:String, navController : NavController, modifier : Modifier=Modifier){
     Box{
-        GreetingText(name)
+        GreetingText(name,navController)
         
         ImageComponent(image = image)
     }
@@ -174,6 +169,6 @@ fun Components(name:Weather, image:String, modifier : Modifier=Modifier){
 @Composable
 fun GreetingPreview2() {
     ClaireBTheme {
-        Components(name = Weather("19°","Bengaluru,India","Mid Rain","H:24° L:18"), image = "moon_cloud_mid_rain")
+        //Components(name = Weather("19°","Bengaluru,India","Mid Rain","H:24° L:18"), image = "moon_cloud_mid_rain")
     }
 }

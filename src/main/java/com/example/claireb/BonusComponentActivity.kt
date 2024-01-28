@@ -47,7 +47,7 @@ data class WeatherBonus(val heure: String, val temperature: String)
 
 @Composable
 fun Text_Bonus(name: WeatherBonus, precipitation : String = "", background : String = "", modifier: Modifier = Modifier) {
-    //Spacer(modifier = Modifier.height(30.dp))
+
     Box{
         if(background=="light_hour")
         {
@@ -55,7 +55,7 @@ fun Text_Bonus(name: WeatherBonus, precipitation : String = "", background : Str
 
                 painter = painterResource(R.drawable.light_hour),
                 contentDescription = null,
-                //modifier = Modifier.size(333.dp)
+
                 modifier = Modifier
                     .width(70.dp)
                     .height(166.dp)
@@ -68,7 +68,7 @@ fun Text_Bonus(name: WeatherBonus, precipitation : String = "", background : Str
 
                 painter = painterResource(R.drawable.black_hour),
                 contentDescription = null,
-                //modifier = Modifier.size(333.dp)
+
                 modifier = Modifier
                     .width(70.dp)
                     .height(166.dp)
@@ -77,18 +77,18 @@ fun Text_Bonus(name: WeatherBonus, precipitation : String = "", background : Str
         }
         Column (verticalArrangement = Arrangement.Center,
             modifier = Modifier.padding(12.dp)
-            //verticalArrangement = Arrangement.Center
+
         ){
             Spacer(modifier = Modifier.height(15.dp))
-            //Spacer(modifier = Modifier.width(20.dp))
+
 
             Text(
                 text = name.heure,
-                //color = MaterialTheme.colorScheme.primary,
+
                 color = Color.White,
-                //style = MaterialTheme.typography.bodyLarge
+
                 fontFamily = sfProDisplayFamily,
-                //fontWeight = FontWeight.Bold,
+                fontWeight = FontWeight.SemiBold,
                 fontSize = 15.sp,
                 lineHeight = 20.sp,
                 letterSpacing = -0.5.sp
@@ -96,9 +96,9 @@ fun Text_Bonus(name: WeatherBonus, precipitation : String = "", background : Str
             Spacer(modifier = Modifier.height(35.dp))
             Text(
                     text = precipitation,
-            //color = MaterialTheme.colorScheme.primary,
+
             color = Color(64,203,216),
-            //style = MaterialTheme.typography.labelSmall
+
             fontFamily = sfProDisplayFamily,
             fontWeight = FontWeight.Bold,
 
@@ -107,12 +107,12 @@ fun Text_Bonus(name: WeatherBonus, precipitation : String = "", background : Str
             letterSpacing = -0.08.sp
             )
             Spacer(modifier = Modifier.height(5.dp))
-            //Spacer(modifier = Modifier.width(10.dp))
+
             Text(
                 text = name.temperature,
-                //color = MaterialTheme.colorScheme.primary,
+
                 color = Color.White,
-                //style = MaterialTheme.typography.labelSmall
+
                 fontFamily = sfProDisplayFamily,
                 //fontWeight = FontWeight.Bold,
 
@@ -189,7 +189,7 @@ fun SmallComponentBonus(name: WeatherBonus, image: String, precipitation : Strin
 @Composable
 fun GreetingPreview3() {
     ClaireBTheme {
-        //Text_Bonus(WeatherBonus("12 PM","19°"),"30%")
+
         SmallComponentBonus(name = WeatherBonus("12 PM"," 19°"), image ="moon_cloud_fast_wind","  30%",)
     }
 }
