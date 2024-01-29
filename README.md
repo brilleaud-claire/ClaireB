@@ -1,4 +1,5 @@
 # Design
+![Design](https://github.com/brilleaud-claire/ClaireB/assets/156075990/fd94ea76-6721-47e6-9e3d-cdbf56d0f6fc)  
 J’ai choisi le design 3 et la technologie Android+Jetpack Compose. 
 
 ## Explication de ma startegie
