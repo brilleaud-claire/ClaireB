@@ -161,9 +161,9 @@ fun ImageComponentBonus(image: String, modifier: Modifier = Modifier){
             painter = painterResource(R.drawable.moon_cloud_fast_wind),
             contentDescription = null,
             modifier = Modifier
-                .width(28.dp)
-                .height(28.dp)
-                .offset(16.dp,57.dp)
+                .width(38.dp)
+                .height(38.dp)
+                .offset(10.5.dp,52.dp)
         )
     }else{
         Image(

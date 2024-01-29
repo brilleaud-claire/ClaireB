@@ -148,7 +148,7 @@ fun Components2(navController : NavController,modifier : Modifier=Modifier){
             item {
                 Components(
                     name = Weather("22°", "Chennai,India", "Fast Wind", "H:26° L:18"),
-                    image = "moon_fast_wind",navController
+                    image = "moon_cloud_fast_wind",navController
                 )
                 Spacer(modifier = Modifier.height(30.dp))
 

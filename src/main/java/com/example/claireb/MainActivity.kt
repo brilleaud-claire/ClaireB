@@ -16,7 +16,7 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             ClaireBTheme {
-                // A surface container using the 'background' color from the theme
+
                 navController=rememberNavController()
                 SetupNavGraph(navController = navController)
 

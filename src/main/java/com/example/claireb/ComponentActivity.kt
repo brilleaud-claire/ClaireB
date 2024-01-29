@@ -73,6 +73,14 @@ fun ImageComponent(image: String, modifier: Modifier = Modifier){
             modifier = Modifier
                 .size(160.dp)
                 .offset(x = 178.dp, y = -40.dp))
+    }else if(image=="moon_cloud_fast_wind") {
+        Image(
+            painter = painterResource(R.drawable.moon_cloud_fast_wind),
+            contentDescription = null,
+            modifier = Modifier
+                .size(160.dp)
+                .offset(x = 178.dp, y = -40.dp)
+        )
     }else{
         Image(
             painter = painterResource(R.drawable.sun_cloud_angled_rain),
